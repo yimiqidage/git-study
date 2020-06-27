@@ -115,17 +115,46 @@ rm -rf .git
 | master | 主干     | 主干代码，跟线上保持一致               |
 | dev    | 开发分支 | 开发分支，用于开发。开发分支可能有多个 |
 
+## 2.代码合并操作步骤
+
 ### 1.使用git命令进行合并
 
 ```bash
-git checkout master
-git pull
-git checkout dev
-git merge master
-git push
+git checkout master # 检出master分支
+git pull # 从远程仓库，同步最新代码到本地
+git checkout dev # 检出自己的开发分支
+git merge master # 同步master分支代码到 dev分支。 即： master -> dev (注意方向不要反了)
+git push # 将本地合并的代码，push到远程仓库
 ```
 
 
+
+# 3.代码合并冲突
+
+## 1.冲突产生的原因
+
+| 分支   | 代码结构                           | 说明                         |
+| :----- | ---------------------------------- | :--------------------------- |
+| master | `String name = "zhangsan-master";` | 主干代码，通过别的分支合并过 |
+| dev    | `String name = "zhangsan-dev";`    | 开发分支，修改相同行的代码   |
+
+
+
+
+
+## 2.如何解决合并冲突
+
+### 1.查找到冲突的文件
+
+```bash
+git merge master # 合并master代码到dev分支时，会提示合并冲突
+```
+
+
+
+### 2.逐个文件解决
+
+## 3.撤销本次合并
 
 
 
