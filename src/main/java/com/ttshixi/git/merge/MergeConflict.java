@@ -6,7 +6,7 @@ package com.ttshixi.git.merge;
 public class MergeConflict {
 
     public static void main(String[] args) {
-        String name = "zhangsan-master";
+        String name = "zhangsan";
         String format = "My name is %s";
         System.out.println(String.format(format,name));
     }
